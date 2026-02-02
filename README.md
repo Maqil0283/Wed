@@ -30,13 +30,15 @@ GATE / PINTU GERBANG
 .gate-wrapper{
   position:relative;
   width:100%;
-  height:100vh;
+  min-height:100%;
+  height:100%;
   display:flex;
   justify-content:center;
   align-items:center;
   background:
     url("https://raw.githubusercontent.com/Maqil0283/assets/refs/heads/main/floral-bg.png.png")
     center/cover no-repeat;
+  overflow:hidden; /* PENTING */
 }
 
 .gate{
@@ -44,12 +46,11 @@ GATE / PINTU GERBANG
   width:50%;
   height:100%;
   top:0;
-  z-index:5;
-  background-size:cover;
+  z-index:999;
+  background-repeat:no-repeat;
   background-position:center;
-  animation-fill-mode:forwards;
+  background-size:contain;
 }
-
 .gate.left{
   left:0;
   background-image:url("https://raw.githubusercontent.com/Maqil0283/assets/refs/heads/main/left.PNG");
