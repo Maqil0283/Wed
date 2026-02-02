@@ -48,7 +48,7 @@ body{
   height:100vh;
   z-index:999;
   background-repeat:no-repeat;
-  background-size:contain;
+  background-size: auto 100%;
   animation-duration:1.6s;
   animation-fill-mode:forwards;
   animation-timing-function:ease-in-out;
