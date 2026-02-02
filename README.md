@@ -36,11 +36,11 @@ body{
 
 /* CARD */
 .card{
-  background:rgba(255,255,255,0.9);
-  width:88%;
+  background:rgba(255,255,255,0.88);
+  width:86%;
   max-width:380px;
   padding:42px 26px;
-  border-radius:14px;
+  border-radius:16px;
   text-align:center;
 }
 
@@ -67,7 +67,7 @@ body{
 
 .monogram .a{
   font-size:58px;
-  margin-top:-6px;
+  margin-top:-8px;
 }
 
 /* CONTENT */
