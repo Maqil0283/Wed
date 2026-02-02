@@ -1,11 +1,11 @@
- <html lang="ms">
+<html lang="ms">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>A | A Engagement</title>
 
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
 
 <!-- AOS -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -21,23 +21,43 @@
 
 body{
   background:#f6f3ed;
+  overflow-x:hidden;
 }
 
-/* SECTION BASE */
-.section{
-  min-height:100vh;
+/* GATE / PINTU GERBANG */
+.gate-wrapper{
+  position:relative;
+  width:100%;
+  height:100vh;
   display:flex;
   justify-content:center;
   align-items:center;
   background:
     url("https://raw.githubusercontent.com/Maqil0283/assets/refs/heads/main/floral-bg.png.PNG")
     center/cover no-repeat;
-  flex-direction:column;
-  padding:40px 20px;
 }
 
-/* CARD BASE */
-.card, .location-card{
+.gate{
+  position:absolute;
+  width:50%;
+  height:100%;
+  background:rgba(255,255,255,0.9);
+  top:0;
+  z-index:5;
+}
+
+.gate.left{ left:0; animation: openLeft 1.5s ease forwards;}
+.gate.right{ right:0; animation: openRight 1.5s ease forwards;}
+
+@keyframes openLeft{ 0%{transform:translateX(0);} 100%{transform:translateX(-100%);} }
+@keyframes openRight{ 0%{transform:translateX(0);} 100%{transform:translateX(100%);} }
+
+/* CARD INVITATION */
+.card{
+  z-index:1;
+  opacity:0;
+  animation: fadeInCard 0.5s ease forwards;
+  animation-delay:1.5s;
   background:rgba(255,255,255,0.88);
   width:90%;
   max-width:500px;
@@ -56,24 +76,23 @@ body{
   color:#6b7a3c;
 }
 
+/* MONOGRAM */
 .monogram{
   display:flex;
-  flex-direction:column;
-  align-items:center;
-  color:#6b7a3c;
+  justify-content:center;
   margin-bottom:20px;
 }
 
-.monogram .s{
-  font-size:90px;
+.monogram .interlock{
+  font-family:'Great Vibes', cursive;
+  font-size:80px;
+  color:#6b7a3c;
+  letter-spacing:-5px;
   line-height:1;
+  text-shadow:1px 1px 2px rgba(0,0,0,0.2);
 }
 
-.monogram .a{
-  font-size:58px;
-  margin-top:-10px;
-}
-
+/* NAMES, DATE, AYAT, HASHTAG */
 .names{
   letter-spacing:4px;
   font-size:15px;
@@ -86,11 +105,7 @@ body{
   margin:22px 0;
 }
 
-.date small{
-  display:block;
-  font-size:12px;
-  margin-top:6px;
-}
+.date small{ display:block; font-size:12px; margin-top:6px; }
 
 .ayat{
   font-size:14px;
@@ -106,31 +121,12 @@ body{
 }
 
 /* LOCATION SECTION */
-.location-card h2{
-  font-size:18px;
-  margin-bottom:16px;
-  color:#6b7a3c;
-}
-
-.location-card p{
-  font-size:14px;
-  margin-bottom:25px;
-}
+.location-card h2{ font-size:18px; margin-bottom:16px; color:#6b7a3c; }
+.location-card p{ font-size:14px; margin-bottom:25px; }
 
 /* GOOGLE MAP */
-.map-container{
-  width:100%;
-  height:250px;
-  margin-bottom:20px;
-  border-radius:12px;
-  overflow:hidden;
-}
-
-.map-container iframe{
-  width:100%;
-  height:100%;
-  border:0;
-}
+.map-container{ width:100%; height:250px; margin-bottom:20px; border-radius:12px; overflow:hidden; }
+.map-container iframe{ width:100%; height:100%; border:0; }
 
 /* GALLERY */
 .gallery{
@@ -150,34 +146,35 @@ body{
   cursor:pointer;
 }
 
-.gallery img:hover{
-  transform: scale(1.1);
-}
+.gallery img:hover{ transform: scale(1.1); }
 
 /* RESPONSIVE */
 @media(max-width:480px){
-  .monogram .s{ font-size:70px; }
-  .monogram .a{ font-size:45px; }
+  .monogram .interlock{ font-size:60px; }
   .card, .location-card{ padding:30px 20px; }
   .names{ font-size:14px; }
   .date{ font-size:14px; }
   .ayat{ font-size:13px; }
   .map-container{ height:200px; }
 }
+
+/* ANIMATION */
+@keyframes fadeInCard{ from{opacity:0;} to{opacity:1;} }
 </style>
 </head>
 
 <body>
 
-<!-- PAGE 1: Engagement -->
-<section class="section" id="engagement">
-  <div class="card" data-aos="zoom-in">
+<!-- PAGE 1: Engagement WITH GATE -->
+<section class="gate-wrapper">
+  <div class="gate left"></div>
+  <div class="gate right"></div>
 
+  <div class="card" data-aos="zoom-in">
     <div class="subtitle">Engagement</div>
 
     <div class="monogram">
-      <div class="s">A</div>
-      <div class="a">A</div>
+      <div class="interlock">A&amp;A</div>
     </div>
 
     <div class="names">Aqil | Alya</div>
@@ -193,23 +190,21 @@ body{
     </div>
 
     <div class="hashtag">#AlyakeAqilhayat</div>
-
   </div>
 </section>
 
 <!-- PAGE 2: Location & Photos -->
 <section class="section" id="location">
   <div class="location-card" data-aos="fade-up">
-
     <h2>Lokasi Majlis</h2>
     <p>Lot 2494, Jalan Joget 4, Taman Ria Jaya, 08000, Sungai Petani, Kedah</p>
 
     <div class="map-container">
       <iframe
-  src="https://www.google.com/maps?q=Lot+2494,+Jalan+Joget+4,+Taman+Ria+Jaya,+08000,+Sungai Petani,+Kedah&output=embed"
-  allowfullscreen
-  loading="lazy"
-></iframe>
+        src="https://www.google.com/maps?q=Lot+2494,+Jalan+Joget+4,+Taman+Ria+Jaya,+08000,+Sungai+Petani,+Kedah&output=embed"
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
     </div>
 
     <h2>Kenangan Kami</h2>
@@ -219,7 +214,6 @@ body{
     </div>
 
     <div class="hashtag">#AlyakeAqilhayat</div>
-
   </div>
 </section>
 
