@@ -2,7 +2,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Saya | Awak</title>
+<title>Aqil | Alya</title>
 
 <!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
@@ -107,17 +107,17 @@ body{
 <section class="section">
   <div class="card" data-aos="zoom-in">
 
-    <div class="subtitle">WALIMATULURUS</div>
+    <div class="subtitle">Engagement</div>
 
     <div class="monogram">
       <div class="s">S</div>
       <div class="a">A</div>
     </div>
 
-    <div class="names">SAYA | AWAK</div>
+    <div class="names">Aqil | Alya</div>
 
     <div class="date">
-      25.10.2025
+      30.05.2025
       <small>3 Jamadilawal 1447H</small>
     </div>
 
@@ -126,7 +126,7 @@ body{
       <small>Surah An-Naba’ (78:8)</small>
     </div>
 
-    <div class="hashtag">#SayaAwakSelamanya</div>
+    <div class="hashtag">#AlyakeAqilhayat</div>
 
   </div>
 </section>
