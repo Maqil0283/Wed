@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="ms">
 <head>
 <meta charset="UTF-8">
@@ -24,7 +25,9 @@ body{
   overflow-x:hidden;
 }
 
-/* GATE / PINTU GERBANG */
+/* --------------------
+GATE / PINTU GERBANG
+-------------------- */
 .gate-wrapper{
   position:relative;
   width:100%;
@@ -41,9 +44,10 @@ body{
   position:absolute;
   width:50%;
   height:100%;
-  background:rgba(255,255,255,0.9);
+  background:rgba(255,255,255,0.95);
   top:0;
   z-index:5;
+  animation-fill-mode:forwards;
 }
 
 .gate.left{ left:0; animation: openLeft 1.5s ease forwards;}
@@ -52,7 +56,9 @@ body{
 @keyframes openLeft{ 0%{transform:translateX(0);} 100%{transform:translateX(-100%);} }
 @keyframes openRight{ 0%{transform:translateX(0);} 100%{transform:translateX(100%);} }
 
-/* CARD INVITATION */
+/* --------------------
+CARD INVITATION
+-------------------- */
 .card{
   z-index:1;
   opacity:0;
@@ -68,7 +74,11 @@ body{
   margin-bottom:30px;
 }
 
-/* TEXT */
+@keyframes fadeInCard{ from{opacity:0;} to{opacity:1;} }
+
+/* --------------------
+TEXT
+-------------------- */
 .subtitle{
   font-size:13px;
   letter-spacing:3px;
@@ -120,7 +130,32 @@ body{
   margin-top:22px;
 }
 
-/* LOCATION SECTION */
+/* --------------------
+SECTION / PAGE 2
+-------------------- */
+.section{
+  padding:40px 20px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  background:
+    url("https://raw.githubusercontent.com/Maqil0283/assets/refs/heads/main/floral-bg.png.PNG")
+    center/cover no-repeat;
+}
+
+/* LOCATION CARD */
+.location-card{
+  background:rgba(255,255,255,0.88);
+  width:90%;
+  max-width:500px;
+  padding:40px 25px;
+  border-radius:18px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+  margin-bottom:30px;
+}
+
 .location-card h2{ font-size:18px; margin-bottom:16px; color:#6b7a3c; }
 .location-card p{ font-size:14px; margin-bottom:25px; }
 
@@ -157,9 +192,6 @@ body{
   .ayat{ font-size:13px; }
   .map-container{ height:200px; }
 }
-
-/* ANIMATION */
-@keyframes fadeInCard{ from{opacity:0;} to{opacity:1;} }
 </style>
 </head>
 
