@@ -36,7 +36,7 @@ GATE / PINTU GERBANG
   justify-content:center;
   align-items:center;
   background:
-    url("https://raw.githubusercontent.com/Maqil0283/assets/refs/heads/main/floral-bg.png.PNG")
+    url("https://raw.githubusercontent.com/Maqil0283/assets/refs/heads/main/floral-bg.png.png")
     center/cover no-repeat;
 }
 
@@ -140,7 +140,7 @@ SECTION / PAGE 2
   align-items:center;
   flex-direction:column;
   background:
-    url("https://raw.githubusercontent.com/Maqil0283/assets/refs/heads/main/floral-bg.png.PNG")
+    url("https://raw.githubusercontent.com/Maqil0283/assets/refs/heads/main/floral-bg.png.png")
     center/cover no-repeat;
 }
 
