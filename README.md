@@ -118,7 +118,7 @@ body{
 
     <div class="date">
       30.05.2025
-      <small>10:00am</small>
+      <small>10:00 am</small>
     </div>
 
     <div class="ayat">
