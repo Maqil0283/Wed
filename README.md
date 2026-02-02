@@ -30,7 +30,7 @@ body{
   justify-content:center;
   align-items:center;
   background:
-    url("https://raw.githubusercontent.com/maiqil0283/assets/main/floral-bg.png")
+    url("https://raw.githubusercontent.com/Maqil0283/assets/refs/heads/main/floral-bg.png.PNG")
     center/cover no-repeat;
 }
 
