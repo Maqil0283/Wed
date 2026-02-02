@@ -213,7 +213,7 @@ body{
 
     <h2>Kenangan Kami</h2>
     <div class="gallery">
-      <img src="https://raw.githubusercontent.com/Maqil0283/assets/refs/heads/main/photo1.png" alt="Foto 1">
+      <img src="https://raw.githubusercontent.com/Maqil0283/assets/refs/heads/main/Foto%201.HEIC" alt="Foto 1">
       <img src="https://raw.githubusercontent.com/Maqil0283/assets/refs/heads/main/photo2.png" alt="Foto 2">
       <img src="https://raw.githubusercontent.com/Maqil0283/assets/refs/heads/main/photo3.png" alt="Foto 3">
     </div>
