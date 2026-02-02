@@ -2,7 +2,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aqil | Alya</title>
+<title>A | A</title>
 
 <!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
@@ -59,12 +59,12 @@ body{
   margin-bottom:18px;
 }
 
-.monogram .s{
+.monogram .A{
   font-size:90px;
   line-height:1;
 }
 
-.monogram .a{
+.monogram .s{
   font-size:58px;
   margin-top:-8px;
 }
@@ -110,7 +110,7 @@ body{
     <div class="subtitle">Engagement</div>
 
     <div class="monogram">
-      <div class="s">S</div>
+      <div class="s">A</div>
       <div class="a">A</div>
     </div>
 
