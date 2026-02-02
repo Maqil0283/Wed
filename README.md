@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="ms">
 <head>
 <meta charset="UTF-8">
@@ -16,7 +17,7 @@
   padding:0;
   box-sizing:border-box;
   font-family:'Playfair Display', serif;
-  scroll-behavior: smooth;
+  scroll-behavior:smooth;
 }
 
 body{
@@ -24,56 +25,91 @@ body{
   overflow-x:hidden;
 }
 
-/* --------------------
-GATE / PINTU GERBANG
--------------------- */
+/* =========================
+   GATE / PINTU GERBANG
+========================= */
 .gate-wrapper{
   position:relative;
-  width:100%;
-  min-height:100%;
-  height:100%;
+  width:100vw;
+  height:100vh;
+  overflow:hidden;
   display:flex;
   justify-content:center;
   align-items:center;
   background:
     url("https://raw.githubusercontent.com/Maqil0283/assets/refs/heads/main/floral-bg.png.png")
     center/cover no-repeat;
-  overflow:hidden; /* PENTING */
 }
 
 .gate{
   position:absolute;
-  width:50%;
-  height:100%;
   top:0;
+  width:50vw;
+  height:100vh;
   z-index:999;
   background-repeat:no-repeat;
-  background-position:center;
   background-size:contain;
+  animation-duration:1.6s;
+  animation-fill-mode:forwards;
+  animation-timing-function:ease-in-out;
 }
+
 .gate.left{
   left:0;
   background-image:url("https://raw.githubusercontent.com/Maqil0283/assets/refs/heads/main/left.PNG");
-  animation: openLeft 1.5s ease forwards;
+  background-position:right center;
+  animation-name:openLeft;
 }
 
 .gate.right{
   right:0;
   background-image:url("https://raw.githubusercontent.com/Maqil0283/assets/refs/heads/main/right.PNG");
-  animation: openRight 1.5s ease forwards;
+  background-position:left center;
+  animation-name:openRight;
 }
 
-@keyframes openLeft{ 0%{transform:translateX(0);} 100%{transform:translateX(-100%);} }
-@keyframes openRight{ 0%{transform:translateX(0);} 100%{transform:translateX(100%);} }
+@keyframes openLeft{
+  0%{
+    transform:translateX(0);
+    opacity:1;
+  }
+  70%{
+    opacity:1;
+  }
+  100%{
+    transform:translateX(-100%);
+    opacity:0;
+  }
+}
 
-/* --------------------
-CARD INVITATION
--------------------- */
+@keyframes openRight{
+  0%{
+    transform:translateX(0);
+    opacity:1;
+  }
+  70%{
+    opacity:1;
+  }
+  100%{
+    transform:translateX(100%);
+    opacity:0;
+  }
+}
+
+/* HIDE GATE AFTER OPEN */
+.gate.hide{
+  display:none;
+}
+
+/* =========================
+   INVITATION CARD
+========================= */
 .card{
-  z-index:1;
+  position:relative;
+  z-index:2;
   opacity:0;
-  animation: fadeInCard 0.5s ease forwards;
-  animation-delay:1.5s;
+  animation:fadeIn 0.8s ease forwards;
+  animation-delay:1.4s;
   background:rgba(255,255,255,0.88);
   width:90%;
   max-width:500px;
@@ -81,41 +117,35 @@ CARD INVITATION
   border-radius:18px;
   text-align:center;
   box-shadow:0 10px 30px rgba(0,0,0,0.1);
-  margin-bottom:30px;
 }
 
-@keyframes fadeInCard{ from{opacity:0;} to{opacity:1;} }
+@keyframes fadeIn{
+  to{ opacity:1; }
+}
 
-/* --------------------
-TEXT
--------------------- */
 .subtitle{
   font-size:13px;
   letter-spacing:3px;
-  margin-bottom:26px;
+  margin-bottom:20px;
   color:#6b7a3c;
 }
 
 /* MONOGRAM */
 .monogram{
-  display:flex;
-  justify-content:center;
-  margin-bottom:20px;
+  margin-bottom:18px;
 }
 
-.monogram .interlock{
+.monogram span{
   font-family:'Great Vibes', cursive;
   font-size:80px;
   color:#6b7a3c;
-  letter-spacing:-5px;
-  line-height:1;
-  text-shadow:1px 1px 2px rgba(0,0,0,0.2);
+  letter-spacing:-6px;
+  text-shadow:1px 1px 2px rgba(0,0,0,0.25);
 }
 
-/* NAMES, DATE, AYAT, HASHTAG */
 .names{
-  letter-spacing:4px;
   font-size:15px;
+  letter-spacing:4px;
   margin:16px 0;
   font-weight:600;
 }
@@ -125,36 +155,39 @@ TEXT
   margin:22px 0;
 }
 
-.date small{ display:block; font-size:12px; margin-top:6px; }
+.date small{
+  display:block;
+  font-size:12px;
+  margin-top:6px;
+}
 
 .ayat{
   font-size:14px;
   font-style:italic;
   line-height:1.6;
-  margin-top:22px;
+  margin-top:20px;
 }
 
 .hashtag{
   font-size:12px;
   opacity:0.8;
-  margin-top:22px;
+  margin-top:20px;
 }
 
-/* --------------------
-SECTION / PAGE 2
--------------------- */
+/* =========================
+   PAGE 2 SECTION
+========================= */
 .section{
-  padding:40px 20px;
+  min-height:100vh;
+  padding:50px 20px;
   display:flex;
   justify-content:center;
   align-items:center;
-  flex-direction:column;
   background:
     url("https://raw.githubusercontent.com/Maqil0283/assets/refs/heads/main/floral-bg.png.png")
     center/cover no-repeat;
 }
 
-/* LOCATION CARD */
 .location-card{
   background:rgba(255,255,255,0.88);
   width:90%;
@@ -163,43 +196,55 @@ SECTION / PAGE 2
   border-radius:18px;
   text-align:center;
   box-shadow:0 10px 30px rgba(0,0,0,0.1);
-  margin-bottom:30px;
 }
 
-.location-card h2{ font-size:18px; margin-bottom:16px; color:#6b7a3c; }
-.location-card p{ font-size:14px; margin-bottom:25px; }
+.location-card h2{
+  font-size:18px;
+  margin-bottom:16px;
+  color:#6b7a3c;
+}
 
-/* GOOGLE MAP */
-.map-container{ width:100%; height:250px; margin-bottom:20px; border-radius:12px; overflow:hidden; }
-.map-container iframe{ width:100%; height:100%; border:0; }
+.location-card p{
+  font-size:14px;
+  margin-bottom:22px;
+}
+
+/* MAP */
+.map-container{
+  width:100%;
+  height:240px;
+  border-radius:12px;
+  overflow:hidden;
+  margin-bottom:25px;
+}
+
+.map-container iframe{
+  width:100%;
+  height:100%;
+  border:0;
+}
 
 /* GALLERY */
 .gallery{
   display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
   gap:12px;
-  justify-items:center;
 }
 
 .gallery img{
   width:100%;
-  max-width:150px;
-  aspect-ratio:1/1;
-  object-fit:cover;
   border-radius:12px;
-  transition: transform 0.3s ease;
-  cursor:pointer;
+  object-fit:cover;
+  transition:transform 0.3s ease;
 }
 
-.gallery img:hover{ transform: scale(1.1); }
+.gallery img:hover{
+  transform:scale(1.08);
+}
 
 /* RESPONSIVE */
 @media(max-width:480px){
-  .monogram .interlock{ font-size:60px; }
-  .card, .location-card{ padding:30px 20px; }
-  .names{ font-size:14px; }
-  .date{ font-size:14px; }
-  .ayat{ font-size:13px; }
+  .monogram span{ font-size:60px; }
   .map-container{ height:200px; }
 }
 </style>
@@ -207,16 +252,16 @@ SECTION / PAGE 2
 
 <body>
 
-<!-- PAGE 1: Engagement WITH GATE -->
+<!-- PAGE 1 -->
 <section class="gate-wrapper">
   <div class="gate left"></div>
   <div class="gate right"></div>
 
-  <div class="card" data-aos="zoom-in">
-    <div class="subtitle">Engagement of </div>
+  <div class="card">
+    <div class="subtitle">Engagement</div>
 
     <div class="monogram">
-      <div class="interlock">A&amp;A</div>
+      <span>A&amp;A</span>
     </div>
 
     <div class="names">Aqil | Alya</div>
@@ -235,7 +280,7 @@ SECTION / PAGE 2
   </div>
 </section>
 
-<!-- PAGE 2: Location & Photos -->
+<!-- PAGE 2 -->
 <section class="section" id="location">
   <div class="location-card" data-aos="fade-up">
     <h2>Lokasi Majlis</h2>
@@ -244,15 +289,15 @@ SECTION / PAGE 2
     <div class="map-container">
       <iframe
         src="https://www.google.com/maps?q=Lot+2494,+Jalan+Joget+4,+Taman+Ria+Jaya,+08000,+Sungai+Petani,+Kedah&output=embed"
-        allowfullscreen
         loading="lazy"
-      ></iframe>
+        allowfullscreen>
+      </iframe>
     </div>
 
     <h2>Kenangan Kami</h2>
     <div class="gallery">
-      <img src="https://raw.githubusercontent.com/Maqil0283/assets/refs/heads/main/Foto%201.HEIC" alt="Foto 1">
-      <img src="https://raw.githubusercontent.com/Maqil0283/assets/refs/heads/main/Foto3.JPG" alt="Foto 2">
+      <img src="https://raw.githubusercontent.com/Maqil0283/assets/refs/heads/main/Foto%201.HEIC">
+      <img src="https://raw.githubusercontent.com/Maqil0283/assets/refs/heads/main/Foto3.JPG">
     </div>
 
     <div class="hashtag">#AlyakeAqilhayat</div>
@@ -261,10 +306,12 @@ SECTION / PAGE 2
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-AOS.init({
-  duration:1500,
-  once:true
-});
+AOS.init({ duration:1200, once:true });
+
+// REMOVE GATE AFTER OPEN
+setTimeout(()=>{
+  document.querySelectorAll('.gate').forEach(g=>g.classList.add('hide'));
+},1700);
 </script>
 
 </body>
